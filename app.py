@@ -3,11 +3,24 @@ import numpy as np
 import pickle
 import re
 import nltk
+import os
+import gdown  # <--- NEW
+
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+# 📥 Download model from Google Drive if not exists
+if not os.path.exists("duplicate_model.h5"):
+    url = "https://drive.google.com/file/d/1Ch-SQz4pNkfSxbFNhUYsCte900589-5Q/view?usp=sharing"
+    gdown.download(url, "duplicate_model.h5", quiet=False)
+
+# 📥 Similarly download vocab.pkl if stored in Drive (optional)
+# if not os.path.exists("vocab.pkl"):
+#     vocab_url = "YOUR_VOCAB_PICKLE_FILE_LINK"
+#     gdown.download(vocab_url, "vocab.pkl", quiet=False)
 
 # Download required NLTK data
 nltk.download('punkt')
