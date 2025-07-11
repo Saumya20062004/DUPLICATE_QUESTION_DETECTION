@@ -4,4 +4,4 @@ numpy
 nltk
 scikit-learn
 //tensorflow==2.18.0
-//gdown
+gdown
