@@ -1,0 +1,6 @@
+# Ignore large data and model files
+train.csv
+processed_data.npz
+duplicate_model.h5
+*.h5
+*.npz
